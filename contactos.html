@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contacto - Explora Manabí</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fa;
+}
+
+header{
+background:#08213d;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+color:white;
+position:sticky;
+top:0;
+}
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
+}
+
+header h1{
+    font-size:40px;
+}
+
+header p{
+    margin-top:10px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.formulario,
+.info{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+h2{
+    color:#0083B0;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+textarea{
+    resize:none;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    background:#00a86b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#008f5d;
+}
+
+.info p{
+    margin:15px 0;
+    font-size:17px;
+}
+
+iframe{
+    width:100%;
+    height:250px;
+    border:none;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+footer{
+    background:#003344;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+@media(max-width:768px){
+.container{
+    grid-template-columns:1fr;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+        <div class="logo">destinos turisticos</div>
+        <nav>
+            <a href="index.html">inicio</a>
+            <a href="viajes.html">viajes</a>
+            <a href="contactos.html">contactos</a>
+
+        </nav>
+    </header>
+
+<header>
+
+    <h1>Contáctanos</h1>
+    <p>Estamos listos para ayudarte a planificar tu próxima aventura.</p>
+
+</header>
+
+<div class="container">
+
+    <div class="formulario">
+        <h2>Envíanos un mensaje</h2>
+
+        <form>
+            <label>Nombre</label>
+            <input type="text" placeholder="Ingresa tu nombre">
+
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="correo@ejemplo.com">
+
+            <label>Teléfono</label>
+            <input type="tel" placeholder="0999999999">
+
+            <label>Mensaje</label>
+            <textarea rows="6" placeholder="Escribe tu consulta..."></textarea>
+
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </div>
+
+    <div class="info">
+        <h2>Información de contacto</h2>
+
+        <p>📍 Dirección: Puerto López, Manabí - Ecuador</p>
+
+        <p>📞 Teléfono: +593 99 123 4567</p>
+
+        <p>📧 Correo: contacto@exploramanabi.com</p>
+
+        <p>🕒 Horario:</p>
+        <p>Lunes a Viernes: 08:00 - 17:00</p>
+        <p>Sábados: 09:00 - 13:00</p>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18..."
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Explora Manabí | Todos los derechos reservados
+</footer>
+
+</body>
+</html>

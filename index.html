@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel slider</title>
+     <link rel="stylesheet" href="estilos.css">
+    <!-- iconos -->
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">destinos turisticos</div>
+        <nav>
+            <a href="index.html">inicio</a>
+            <a href="viajes.html">viajes</a>
+            <a href="contactos.html">contactos</a>
+
+        </nav>
+    </header>
+    <section class="slider">
+        <div class="slide active"
+        style="background-image: url('https://ec.viajandox.com/uploads/islote%20los%20ahorcados_1.jpg') ;">
+        <div class="contenido">
+            <span>Salango</span>
+            <h1>Isla<br>los ahorcados</h1>
+
+            <p>El Islote Los Ahorcados es una impresionante formación rocosa de origen volcánico situada frente a la costa de la provincia de Manabí, en Ecuador. El lugar destaca por su gran biodiversidad marina, leyendas místicas de antiguos piratas y por formar parte del área protegida del Parque Nacional Machalilla.</p>
+
+            <button onclick="window.location.href='https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://puerto-lopez.com/es/actividades/salango.html'">descubrir destino</button>
+        </div>
+        </div>
+    
+    
+
+
+
+         <div class="slide"
+        style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/0e/a4/4e/c8/malecon-julio-izurieta.jpg') ;">
+            <div class="contenido">
+                <span>Puerto lopez</span>
+                <h1>Malecon<br>Julio Izurieta</h1>
+
+            <p>El Malecón Julio Izurieta es el eje turístico, social y económico del cantón costero de Puerto López, en la provincia de Manabí. Esta infraestructura costera bordea toda la playa principal de la ciudad y sirve como el punto de partida clave para explorar el Parque Nacional Machalilla.</p>
+
+            <button  onclick="window.location.href='https://ec.viajandox.com/manabi/puerto-lopez-C154'">descubrir destino</button>
+            </div>
+
+
+
+
+        </div>
+
+
+    
+
+        <div class="slide"
+        style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr3E1s42eQuNS5W2odKSyBVwGqR-B1Q6xycCGFa_-X3g&s=10') ;">
+            <div class="contenido">
+                <span>RIO CHICO</span>
+                <h1>PLAYA DORADA</h1>
+            <p>La Playa Dorada es un paraíso escondido y semiprivado ubicado en la comuna costera de Río Chico, dentro de la parroquia Salango del cantón Puerto López. Es considerada una de las playas más hermosas, tranquilas y vírgenes de la provincia de Manabí.</p>
+            <button  onclick="window.location.href='https://www.minube.com/rincon/rio-chico-a3685053'">descubrir destino</button>
+            </div>
+        </div>
+        
+    </section>
+
+    <div class="miniaturas">
+        
+        <div class="card active">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBGMqR4ClExF11BnmmOAspnUJ72dPG7Vin_Y4KIQ9o0Q&s=10">
+            <h3>Salango</h3> 
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTHCtYiJvORBRWw2Qfr683AG7lp2OLgPTpW5kHefI12Q&s=10">
+            <h3>Puerto lopez</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR64NisX60UFijsWVHXVcNHzViMcY-eFPIEtbKOaORG5Q&s">
+            <h3>Rio chico</h3>
+        </div>
+  </div>
+     <div class="controles">
+        <button id="anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="siguiente">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+    <script>
+        const slides=document.querySelectorAll(".slide");
+        const cards=document.querySelectorAll(".card");
+
+        const siguiente=document.getElementById("siguiente");
+        const anterior=document.getElementById("anterior");
+
+         let indice =0;
+
+        function mostrarSlide(i) {
+           slides.forEach(slide =>
+              slide.classList.remove("active")
+            );
+
+           cards.forEach(card =>
+            card.classList.remove("active")
+            );
+
+           slides[i].classList.add("active")
+           cards[i].classList.add("active")
+        }
+
+        siguiente.addEventListener("click",()=>{
+
+            indice++;
+
+            if(indice >= slides.length){
+                indice = 0;
+            }
+
+            mostrarSlide(indice);
+        });
+        anterior.addEventListener("click",()=>{
+
+             indice--;
+
+            if(indice < 0){
+                indice = slides.length - 1;
+            }
+
+            mostrarSlide(indice);
+        });
+
+        cards.forEach((card, i)=>{
+            card.addEventListener("click", ()=>{
+
+                indice = i;
+
+                mostrarSlide(indice);
+            });
+        });
+
+
+       /*cambio automatico cada 5 segundos */
+
+        setInterval(()=>{
+
+            indice++
+
+            if(indice >= slides.length){
+                indice =0;
+            }
+
+            mostrarSlide(indice);
+        }, 3000);
+
+    </script>
+      
+</body>
+
+
+</html>
